@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Broen Lab - Laboratoriya Xidmətləri{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=1.1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="nav-logo">
+                        <div class="logo">BL</div>
+                        <h2>Broen Lab</h2>
+                    </div>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#hero" class="nav-link">Ana Səhifə</a></li>
+                        <li><a href="#services" class="nav-link">Xidmətlər</a></li>
+                        <li><a href="#tests" class="nav-link">Testlər</a></li>
+                        <li><a href="#team" class="nav-link">Komanda</a></li>
+                        <li><a href="#contact" class="nav-link">Əlaqə</a></li>
+                        <li><a href="/admin/" class="nav-link">Admin</a></li>
+                    </ul>
+                    <div class="nav-toggle" id="nav-toggle">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="nav-logo">
+                        <div class="logo">BL</div>
+                        <h3>Broen Lab</h3>
+                    </div>
+                    <p id="footer-description">Müasir laboratoriya xidmətləri və keyfiyyətli testlər.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Əlaqə</h4>
+                    <div id="footer-contact">
+                        <p>Məlumatlar yüklənir...</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Sürətli Keçidlər</h4>
+                    <ul>
+                        <li><a href="#services">Xidmətlər</a></li>
+                        <li><a href="#tests">Testlər</a></li>
+                        <li><a href="#team">Komanda</a></li>
+                        <li><a href="#contact">Əlaqə</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sosial Şəbəkələr</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Broen Lab. Bütün hüquqlar qorunur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}?v=1.1"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ana Səhifə - Broen Lab{% endblock %}
+
+{% block content %}
+<!-- Debug info -->
+<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
+    <h4>Debug Info</h4>
+    <p>Bu səhifə admin panelindəki məlumatları göstərir.</p>
+    <p>JavaScript hazırdır: <span id="js-status">Yox</span></p>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 id="company-name">Broen Lab</h1>
+                <p id="company-description">Müasir laboratoriya avadanlıqları və peşəkar komanda ilə keyfiyyətli test xidmətləri təqdim edirik.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Xidmətlərimiz</a>
+                    <a href="#tests" class="btn btn-secondary">Testlərimiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Xidmətlərimiz</h2>
+        <div class="services-grid" id="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <h3>Xidmətlər yüklənir...</h3>
+                <p>Məlumatlar hazırlanır</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team" id="team">
+    <div class="container">
+        <h2 class="section-title">Komandamız</h2>
+        <div class="team-grid" id="team-grid">
+            <div class="team-card">
+                <div class="team-photo">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Komanda yüklənir...</h3>
+                <p>Məlumatlar hazırlanır</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tests Section -->
+<section class="tests" id="tests">
+    <div class="container">
+        <h2 class="section-title">Test Növlərimiz</h2>
+        <div class="tests-grid" id="tests-grid">
+            <div class="test-card">
+                <div class="test-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <h3>Testlər yüklənir...</h3>
+                <p>Məlumatlar hazırlanır</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq" id="faq">
+    <div class="container">
+        <h2 class="section-title">Tez-tez Verilən Suallar</h2>
+        <div class="faq-container" id="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>FAQ-lar yüklənir...</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Məlumatlar hazırlanır...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+console.log('Səhifə script başladı');
+
+// Debug status
+document.getElementById('js-status').textContent = 'Bəli';
+
+// Wait for DOM
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM hazırdır');
+    
+    // Test API connection first
+    fetch('/api/core/company-info/')
+        .then(response => {
+            console.log('API Response status:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('API məlumatları:', data);
+            
+            // Update company info
+            if (data.company) {
+                document.getElementById('company-name').textContent = data.company.name;
+                document.getElementById('company-description').textContent = data.company.description;
+            }
+            
+            // Update services
+            if (data.services && data.services.length > 0) {
+                const servicesGrid = document.getElementById('services-grid');
+                servicesGrid.innerHTML = data.services.map(service => `
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="${service.icon || 'fas fa-flask'}"></i>
+                        </div>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    </div>
+                `).join('');
+            }
+            
+            // Update team
+            if (data.team_members && data.team_members.length > 0) {
+                const teamGrid = document.getElementById('team-grid');
+                teamGrid.innerHTML = data.team_members.map(member => `
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>${member.full_name}</h3>
+                        <p class="team-position">${member.position_display}</p>
+                        <p class="team-specialization">${member.specialization}</p>
+                    </div>
+                `).join('');
+            }
+        })
+        .catch(error => {
+            console.error('API Xətası:', error);
+        });
+    
+    // Load tests
+    fetch('/api/tests/categories/')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Test məlumatları:', data);
+            if (data.results && data.results.length > 0) {
+                const testsGrid = document.getElementById('tests-grid');
+                testsGrid.innerHTML = data.results.map(category => `
+                    <div class="test-card">
+                        <div class="test-icon">
+                            <i class="${category.icon || 'fas fa-vial'}"></i>
+                        </div>
+                        <h3>${category.name}</h3>
+                        <p>${category.test_count} test mövcuddur</p>
+                    </div>
+                `).join('');
+            }
+        })
+        .catch(error => {
+            console.error('Test API Xətası:', error);
+        });
+    
+    // Load FAQ
+    fetch('/api/core/faq/')
+        .then(response => response.json())
+        .then(data => {
+            console.log('FAQ məlumatları:', data);
+            if (data.results && data.results.length > 0) {
+                const faqContainer = document.getElementById('faq-container');
+                faqContainer.innerHTML = data.results.map(faq => `
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>${faq.question}</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>${faq.answer}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        })
+        .catch(error => {
+            console.error('FAQ API Xətası:', error);
+        });
+});
+</script>
+{% endblock %}

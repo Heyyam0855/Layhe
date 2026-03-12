@@ -85,7 +85,6 @@ out/
 instance/
 *.pyc
 *.pyo
-migrations/
 
 # ---------- Logs & Temp ----------
 *.log
@@ -98,6 +97,60 @@ temp/
 
 # ---------- Environment / Secrets ----------
 .env
+
+# ---------- Virtual Environments ----------
+venv/
+env/
+.venv/
+venv_lab/
+
+# ---------- Media / Large Files ----------
+*.mp4
+*.avi
+*.mov
+*.bmp
+*.7z
+*.zip
+*.tar.gz
+*.rar
+*.exe
+*.msi
+*.iso
+media/
+
+# ---------- Layihələr - Yalnız seçilmişlər yüklənir ----------
+# Bu qovluqlar GitHub-a yüklənmir:
+C_NASM_Project/
+C_project/
+C_Project_2/
+Certificate_Exam/
+copilot-cli/
+Cursor_Project/
+DataManagement/
+DeepSeek_Code_AI/
+Experience/
+Flask_Framework/
+Flask_Framework_2/
+GPU_Project/
+Java/
+java-compiler-analyzer/
+Khayyam/
+New_Design_Project/
+New_File/
+New_Folder_Design/
+New_Folder_Project/
+New_Project/
+New_Project_2/
+Programming/
+Project/
+Python_Lessons/
+Python_Scripts/
+PythonWebserver/
+PythonWebServer_ds/
+Restaurant/
+Rules/
+Sql/
+Student_Backend/
 .env.local
 .env.production
 *.pem
