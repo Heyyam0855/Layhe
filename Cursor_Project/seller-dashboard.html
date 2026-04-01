@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satıcı Paneli - Yeni Məhsul Yarat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="seller-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="seller-body">
+    <div class="seller-container">
+        <!-- Sidebar -->
+        <aside class="seller-sidebar">
+            <div class="seller-profile">
+                <div class="seller-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="seller-name">Satıcı Adı</h3>
+                <p class="seller-email">satici@gmail.com</p>
+            </div>
+
+            <nav class="seller-nav">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>İdarə Paneli</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Məhsullar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Sifarişlər</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analitika</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-actions">
+                <button class="btn-view-store">
+                    <i class="fas fa-store"></i>
+                    Mağazaya Bax
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Ayarlar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Çıxış</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="seller-main">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">İdarə Paneli</a>
+                <span>/</span>
+                <a href="#">Məhsullar</a>
+                <span>/</span>
+                <span class="breadcrumb-current">Yeni Məhsul</span>
+            </div>
+
+            <!-- Page Title -->
+            <h1 class="page-title">Yeni Məhsul Yarat</h1>
+
+            <!-- Product Form -->
+            <form class="product-form" id="productForm">
+                <!-- Product Description Section -->
+                <section class="form-section">
+                    <h2 class="section-heading">Məhsul Təsviri</h2>
+                    
+                    <div class="form-group">
+                        <label for="productName" class="form-label">
+                            Məhsulun adı <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="productName" 
+                            class="form-input" 
+                            placeholder="Məhsulun adını daxil edin"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription" class="form-label">
+                            Məhsul Təsviri
+                        </label>
+                        <textarea 
+                            id="productDescription" 
+                            class="form-textarea" 
+                            rows="5"
+                            placeholder="Məhsul haqqında ətraflı məlumat daxil edin"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCategory" class="form-label">
+                            Kateqoriya <span class="required">*</span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="productCategory" class="form-select" required>
+                                <option value="">Kateqoriya seçin</option>
+                                <option value="electronics">Elektronika</option>
+                                <option value="clothing">Geyim</option>
+                                <option value="home">Ev Əşyaları</option>
+                                <option value="beauty">Gözəllik</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Images Section -->
+                <section class="form-section">
+                    <h2 class="section-heading">Məhsul Şəkilləri</h2>
+                    
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p class="upload-text">Şəkilləri bura sürükləyib atın</p>
+                            <label for="imageInput" class="upload-link">faylı seçin</label>
+                            <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                            <p class="upload-hint">PNG, JPG, GIF (Max. 800x600px)</p>
+                        </div>
+                    </div>
+
+                    <div class="image-preview-container" id="imagePreviewContainer">
+                        <!-- Preview images will be added here -->
+                    </div>
+                </section>
+
+                <!-- Price Section -->
+                <section class="form-section form-card">
+                    <h2 class="section-heading">Qiymət</h2>
+                    
+                    <div class="form-group">
+                        <label for="productPrice" class="form-label">
+                            Qiymət <span class="required">*</span>
+                        </label>
+                        <div class="price-input-wrapper">
+                            <input 
+                                type="number" 
+                                id="productPrice" 
+                                class="form-input price-input" 
+                                placeholder="0.00"
+                                step="0.01"
+                                min="0"
+                                required
+                            >
+                            <div class="price-controls">
+                                <button type="button" class="price-btn" id="priceIncrease">
+                                    <i class="fas fa-chevron-up"></i>
+                                </button>
+                                <button type="button" class="price-btn" id="priceDecrease">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <span class="error-message" id="priceError">Bu sahə boş qala bilməz</span>
+                    </div>
+                </section>
+
+                <!-- Delivery Section -->
+                <section class="form-section form-card">
+                    <h2 class="section-heading">Çatdırılma</h2>
+                    
+                    <div class="form-group">
+                        <label for="deliveryTime" class="form-label">
+                            Təxmini Çatdırılma Müddəti
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="deliveryTime" class="form-select">
+                                <option value="">Müddət seçin</option>
+                                <option value="1-2">1-2 gün</option>
+                                <option value="3-5">3-5 gün</option>
+                                <option value="5-7">5-7 gün</option>
+                                <option value="7-14">7-14 gün</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="saveBtn">
+                        Dəyişiklikləri yadda saxla
+                    </button>
+                    <button type="submit" class="btn-primary" id="publishBtn">
+                        Dərc Et
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="seller-script.js"></script>
+</body>
+</html>
+

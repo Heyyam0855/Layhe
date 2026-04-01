@@ -1,0 +1,10 @@
+# Restoran İdarə Etmə Sistemi üçün lazımi kitabxanalar
+
+# Əsas kitabxanalar Python ilə birlikdə gəlir:
+# - tkinter (GUI)
+# - sqlite3 (Verilənlər bazası)
+# - datetime (Tarix və vaxt)
+
+# Əlavə kitabxanalar (əgər lazım olarsa):
+# pillow>=8.0.0  # Şəkil işləmə üçün
+# tkcalendar>=1.6.0  # Tarix seçici üçün

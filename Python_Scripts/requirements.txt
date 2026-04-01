@@ -1,0 +1,24 @@
+# Python + C++ İnteqrasiya Layihəsi - Asılılıqlar
+# ==============================================
+
+# Əsas asılılıqlar
+pybind11>=2.11.0          # C++ binding kitabxanası
+numpy>=1.24.0             # Array əməliyyatları üçün
+
+# Test asılılıqları
+pytest>=7.4.0             # Test framework
+pytest-cov>=4.1.0         # Coverage hesabatı
+
+# İnkişaf alətləri
+black>=23.0.0             # Kod formatlaması
+isort>=5.12.0             # Import sıralama
+mypy>=1.5.0               # Tip yoxlaması
+flake8>=6.1.0             # Linting
+
+# Sənədləşdirmə
+sphinx>=7.0.0             # Sənədləşdirmə generatoru
+sphinx-rtd-theme>=1.3.0   # ReadTheDocs teması
+
+# Performans analizi (optional)
+# line-profiler>=4.1.0    # Sətir-sətir profiling
+# memory-profiler>=0.61.0 # Yaddaş profiling

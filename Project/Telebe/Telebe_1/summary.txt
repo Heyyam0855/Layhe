@@ -1,0 +1,24 @@
+Assembly → Maşın Kodu → Mikrokod → Tranzistor (Nano)
+
+  ┌────────────────��─┐
+  │ mov eax, 5       │  ← Proqramçı yazır (Assembly)
+  └────────┬─────────┘
+           ▼
+  ┌──────────────────┐
+  │ B8 05 00 00 00   │  ← Assembler çevirir (Maşın kodu/HEX)
+  └────────┬─────────┘
+           ▼
+  ┌──────────────────────┐
+  │ 10111000 00000101... │  ← CPU oxuyur (İkili/Binary)
+  └────────┬─────────────┘
+           ▼
+  ┌──────────────────────┐
+  │ μOp1: LOAD_IMM tmp,5 │  ← Dekoder çevirir (Mikrokod)
+  │ μOp2: MOV_REG EAX,tmp│
+  └────────┬─────────────┘
+           ▼
+  ┌──────────────────────┐
+  │ ⚡🚫⚡⚡⚡🚫🚫🚫     │  ← Tranzistorlar işləyir (Nano)
+  │ ON OFF ON ON ON OFF  │     5nm / 3nm səviyyəsində
+  │ OFF OFF              │
+  └──────────────────────┘

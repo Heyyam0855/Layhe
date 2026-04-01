@@ -1,0 +1,6 @@
+# CPU Simulyator - Python Project
+# Heç bir əlavə paket tələb olunmur
+# Python 3.7+ kifayətdir
+
+# Əgər test və ya development üçün əlavə paketlər lazımdırsa:
+# pytest>=7.0.0  # Test üçün (opsional)

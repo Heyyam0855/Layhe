@@ -1,0 +1,19 @@
+# Python Requirements for Personal Task Manager & Notes
+
+# Core GUI
+# tkinter is built-in with Python, no need to install
+
+# Additional GUI components
+tkcalendar>=1.6.1    # Calendar widget for date selection
+pillow>=8.3.0        # Image processing for icons and themes
+
+# Development and Testing (Optional)
+pytest>=6.2.0        # Unit testing framework
+black>=21.0.0         # Code formatting
+flake8>=3.9.0         # Code linting
+
+# Packaging (Optional)
+pyinstaller>=4.5.0   # Create executable files
+
+# Documentation (Optional)
+sphinx>=4.0.0        # Generate documentation

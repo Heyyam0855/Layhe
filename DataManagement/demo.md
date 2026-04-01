@@ -1,0 +1,5 @@
+- Biznes Analitik - Biznesin tələblərini anlayır analiz edir və bu tələblərə uyğun texniki plan hazırlayır.
+- Layihə Meneceri - Layihənin vaxtında və büdcəyə uyğun tamamlanmasını təmin edir, komanda ilə əlaqəni idarə edir.
+- UX/UI Dizayner - İstifadəçi təcrübəsini və interfeys dizaynını hazırlayır, istifadəçi dostu və cəlbedici dizaynlar yaradır.
+- Front End Developer - Veb saytların və tətbiqlərin ön hissəsini kodlayır, istifadəçi interfeysini reallaşdırır.
+- Back End Developer - Server tərəfi proqramlaşdırma işlərini həyata keçirir, verilənlər bazası və server loqikasını idarə edir.

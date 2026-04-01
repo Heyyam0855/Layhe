@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mənim Portfolio Saytım</title>
+    <meta name="description" content="Web developer portfoliosu - HTML, CSS, JavaScript layihələri">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>Portfolio</h2>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Ana Səhifə</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Haqqımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Layihələr</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Əlaqə</a>
+                    </li>
+                </ul>
+                <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/200x200" alt="Profil şəkli" class="profile-image">
+                <h1>Salam, mən <strong>Web Developer</strong>am</h1>
+                <p>HTML, CSS və JavaScript ilə <em>gözəl veb saytlar</em> yaradıram</p>
+                <button class="hero-btn" onclick="scrollToSection('about')">Məni Tanı</button>
+            </div>
+            <div class="hero-animation">
+                <div class="floating-element">💻</div>
+                <div class="floating-element">🎨</div>
+                <div class="floating-element">⚡</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Haqqımda</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Mən <strong>Frontend Developer</strong>əm və müasir veb texnologiyaları ilə işləməyi sevirəm. 
+                            8 həftəlik intensiv öyrənmə planı əsasında bu bacarıqları əldə etmişəm.
+                        </p>
+                        <p>
+                            İxtisas sahələrim: <em>Responsiv dizayn</em>, <em>İnteraktiv interfeyslər</em>, 
+                            və <em>Modern JavaScript</em> tətbiqləri.
+                        </p>
+                        <ul class="skills-list">
+                            <li>HTML5 & Semantik markup</li>
+                            <li>CSS3, Flexbox & Grid</li>
+                            <li>JavaScript ES6+</li>
+                            <li>Responsiv dizayn</li>
+                            <li>API Integration</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="8">0</span>
+                            <span class="stat-label">Həftə təlim</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Layihə</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">Kod sətri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Layihələrim</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Todo App layihəsi">
+                        <div class="project-content">
+                            <h3>Todo Tətbiqi</h3>
+                            <p>LocalStorage ilə məlumatları saxlayan interaktiv todo list</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">LocalStorage</span>
+                                <span class="tag">DOM</span>
+                            </div>
+                            <button class="project-btn" onclick="openProject('todo')">Göstər</button>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Hava tətbiqi">
+                        <div class="project-content">
+                            <h3>Hava Proqnozu</h3>
+                            <p>API ilə real hava məlumatlarını göstərən tətbiq</p>
+                            <div class="project-tags">
+                                <span class="tag">Fetch API</span>
+                                <span class="tag">Async/Await</span>
+                                <span class="tag">JSON</span>
+                            </div>
+                            <button class="project-btn" onclick="openProject('weather')">Göstər</button>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="https://via.placeholder.com/300x200" alt="Sayğac tətbiqi">
+                        <div class="project-content">
+                            <h3>İnteraktiv Sayğac</h3>
+                            <p>Dark mode dəstəyi olan sayğac tətbiqi</p>
+                            <div class="project-tags">
+                                <span class="tag">CSS Grid</span>
+                                <span class="tag">Event Listeners</span>
+                                <span class="tag">Theme Toggle</span>
+                            </div>
+                            <button class="project-btn" onclick="openProject('counter')">Göstər</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo Section -->
+        <section class="demo-section">
+            <div class="container">
+                <h2>Canlı Demo</h2>
+                <div class="demo-container">
+                    <div class="counter-demo">
+                        <h3>Sayğac Demo</h3>
+                        <div class="counter-display">
+                            <span id="counterValue">0</span>
+                        </div>
+                        <div class="counter-controls">
+                            <button class="counter-btn" id="decreaseBtn">−</button>
+                            <button class="counter-btn" id="resetBtn">Reset</button>
+                            <button class="counter-btn" id="increaseBtn">+</button>
+                        </div>
+                    </div>
+
+                    <div class="todo-demo">
+                        <h3>Todo Demo</h3>
+                        <div class="todo-input-group">
+                            <input type="text" id="todoInput" placeholder="Yeni tapşırıq əlavə et...">
+                            <button id="addTodoBtn">Əlavə et</button>
+                        </div>
+                        <ul id="todoList" class="todo-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Əlaqə</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Mənimlə əlaqə saxlayın</h3>
+                        <p>Layihələr üçün əməkdaşlıq təklifi və ya suallarınız varsa, yazın!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>example@email.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <span>+994 XX XXX XX XX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Adınız:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesaj:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Göndər</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Portfolio Saytı. Bütün hüquqlar qorunur.</p>
+                <p>8 həftəlik HTML, CSS, JavaScript öyrənmə planı ilə hazırlanıb</p>
+                <button id="scrollToTop" class="scroll-to-top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader"></div>
+        <p>Yüklənir...</p>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+</html>

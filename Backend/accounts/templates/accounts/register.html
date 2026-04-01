@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesab yaradın - Tibbi Laboratoriya</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="header">
+                <h1 class="title">Hesab yaradın</h1>
+                <p class="subtitle">Yeni macəralara başlamaq üçün qeydiyyatdan keçin</p>
+            </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" id="registerForm" class="auth-form">
+                {% csrf_token %}
+                
+                <!-- Ad sahəsi -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Ad</label>
+                    {{ form.ad }}
+                    <span class="error-message" id="nameError">{{ form.ad.errors }}</span>
+                </div>
+
+                <!-- Soyad sahəsi -->
+                <div class="form-group">
+                    <label for="soyad" class="form-label">Soyad</label>
+                    {{ form.soyad }}
+                    <span class="error-message" id="soyadError">{{ form.soyad.errors }}</span>
+                </div>
+
+                <!-- E-poçt sahəsi -->
+                <div class="form-group">
+                    <label for="email" class="form-label">E-poçt</label>
+                    {{ form.email }}
+                    <span class="error-message" id="emailError">{{ form.email.errors }}</span>
+                </div>
+
+                <!-- Şifrə sahəsi -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Şifrə</label>
+                    {{ form.password1 }}
+                    <span class="error-message" id="passwordError">{{ form.password1.errors }}</span>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Şifrə təsdiqi -->
+                <div class="form-group">
+                    <label for="passwordConfirm" class="form-label">Şifrəni təsdiqləyin</label>
+                    {{ form.password2 }}
+                    <span class="error-message" id="passwordConfirmError">{{ form.password2.errors }}</span>
+                </div>
+
+                <!-- Şərtlərlə razılıq -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input 
+                            type="checkbox" 
+                            id="acceptTerms" 
+                            name="acceptTerms"
+                            required
+                        >
+                        <span class="checkbox-text">
+                            <a href="#" class="link">İstifadə şərtləri</a> ilə razıyam.
+                        </span>
+                    </label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <!-- Qeydiyyat düyməsi -->
+                <button type="submit" class="btn btn-primary">
+                    Qeydiyyatdan keç
+                </button>
+
+                <!-- Daxil ol linki -->
+                <div class="form-footer">
+                    <p>Artıq hesabınız var? <a href="{% url 'login' %}" class="link">Daxil olun</a></p>
+                </div>
+            </form>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>Qeydiyyat etməklə, siz şərtlərimizi və məxfilik siyasətimizi qəbul edirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+# Build nəticələri
+build/
+bin/
+*.exe
+*.o
+*.obj
+
+# IDE və editor faylları
+.vscode/
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.suo
+*.user
+*~
+
+# Temporary fayllar
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Debug faylları
+*.pdb
+*.ilk
+
+# CMake faylları
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Documentation build
+docs/html/
+docs/latex/
+*.dox
+
+# Package faylları
+*.zip
+*.tar.gz
+*.deb
+*.rpm
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test nəticələri
+Testing/
+test_results/
+
+# External libraries (əgər local olaraq install edilibsə)
+lib/external/
+third_party/

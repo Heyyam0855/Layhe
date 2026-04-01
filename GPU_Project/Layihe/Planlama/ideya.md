@@ -1,0 +1,1 @@
+Mən bir proqramçıyam və öz gördüyüm işləri rahatlıqla təqdim edə biləcəyim bir layihəyə ehtiyacım var. Bu layihə vasitəsilə mən öz bacarıqlarımı, təcrübəmi və keçmiş işlərimi nümayiş etdirə bilərəm. Layihənin əsas məqsədi mənim peşəkar profilimi gücləndirmək və potensial işəgötürənlərə və ya müştərilərə mənim nə qədər bacarıqlı olduğumu göstərməkdir.

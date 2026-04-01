@@ -1,0 +1,16 @@
+run.py
+bash: run.py: command not found
+ torch run.py
+FUJITSU@DESKTOP-B7QS1QG MINGW64 ~/Desktop/Proqramlasdirma
+$ code run.py
+
+FUJITSU@DESKTOP-B7QS1QG MINGW64 ~/Desktop/Proqramlasdirma
+
+FUJITSU@DESKTOP-B7QS1QG MINGW64 ~/Desktop/Proqramlasdirma
+$ py run.py
+
+$ py run.py
+C:\Users\FUJITSU\AppData\Local\Programs\Python\Python313\python.exe: can't open file 'C:\\User
+s\\FUJITSU\\Desktop\\Proqramlasdirma\\run.py': [Errno 2] No such file or directory
+
+FUJITSU@DESKTOP-B7QS1QG MINGW64 ~/Desktop/Proqramlasdirma
