@@ -1,0 +1,8 @@
+# Bu layihə Python standart kitabxanalarından istifadə edir
+# Əlavə paketlər lazım deyil
+
+# Əgər gələcəkdə əlavə paketlər istifadə olunarsa, buraya əlavə edin
+# Məsələn:
+# cryptography>=3.4.8
+# flask>=2.0.0
+

@@ -120,9 +120,6 @@ media/
 
 # ---------- Layihələr - Yalnız seçilmişlər yüklənir ----------
 # Bu qovluqlar GitHub-a yüklənmir:
-C_NASM_Project/
-C_project/
-C_Project_2/
 Certificate_Exam/
 copilot-cli/
 Cursor_Project/
